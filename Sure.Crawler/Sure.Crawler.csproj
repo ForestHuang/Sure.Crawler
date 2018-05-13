@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{154FA516-1627-43C8-A6F8-DD2795AFFE94}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Sure.Crawler</RootNamespace>
     <AssemblyName>Sure.Crawler</AssemblyName>
@@ -39,7 +39,19 @@
     <Reference Include="log4net">
       <HintPath>..\..\..\..\dll\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\..\MongodDB\Mongodb.Study\Mongodb.Common\bin\Debug\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\MongodDB\Mongodb.Study\Mongodb.Common\bin\Debug\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core">
+      <HintPath>..\..\..\..\MongodDB\Mongodb.Study\Mongodb.Common\bin\Debug\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Buffers">
+      <HintPath>..\..\..\..\MongodDB\Mongodb.Study\Mongodb.Common\bin\Debug\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -67,9 +79,16 @@
     <Compile Include="General\HTTPGeneral.cs" />
     <Compile Include="General\IDownloadProgressListener.cs" />
     <Compile Include="General\Log4net.cs" />
+    <Compile Include="General\MongodbHelper.cs" />
     <Compile Include="Model\FileInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmallKunshan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmallKunshan.Designer.cs">
+      <DependentUpon>SmallKunshan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Crawler.resx">
       <DependentUpon>Crawler.cs</DependentUpon>
     </EmbeddedResource>
@@ -82,6 +101,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SmallKunshan.resx">
+      <DependentUpon>SmallKunshan.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="bin\App_Data\log4net\log4net.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

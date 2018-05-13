@@ -16,7 +16,7 @@ namespace Sure.Crawler
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Crawler());
+            Application.Run(new SmallKunshan());
         }
     }
 }
